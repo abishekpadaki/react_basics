@@ -22,22 +22,39 @@
   //1.Create/Define a Component
   //2.Instantiate the Component
 
-  class BasicComponent extends React.Component{
+ class FormComponent extends React.Component{
+     render(){
+         return <form>
+             Enter Comment: <input type="text"/>
+             <input type="button" value="Add"/>
+         </form>
+     }
+ }
+ 
+  class CommentComponent extends React.Component{
       render(){
-          return <section>
-                            <h1 className="Header">hello component using JSX</h1>
-                            <p>This is para </p>
-                            </section>
+          return <ul>
+                            <li>React is a lib</li>
+                            <li> I am best </li>
+                            <li> no u </li>
+                            <li> jk </li>
+          </ul>
 
       }
   }
 
-  var basicCompInstance=<div> 
-      <BasicComponent/>
-      <BasicComponent/>
-  </div>
+  class BlogComponent extends React.Component{
+    render(){
+        return <div>
+            <FormComponent/>
+            <CommentComponent/>
+        </div> 
 
-  ReactDOM.render(basicCompInstance,document.getElementById('container'));
+    }
+}
+
+ 
+  ReactDOM.render(<BlogComponent/>,document.getElementById('container'));
 </script>
     </body>
 
