@@ -20,7 +20,10 @@
 <script>
     //React Element Parameters for create element ->(TheElement, HTMLAttributes, Child )
 var h1Element=React.createElement('h1',{id:'header'},"Hello React!");
-ReactDOM.render(h1Element,document.getElementById('container'));
+var pElement=React.createElement("p",{},"This is a paragraph");
+var fragment=[h1Element,pElement];
+var sectionElement=React.createElement("section",{},fragment);
+ReactDOM.render(sectionElement,document.getElementById('container'));
 
 </script>
     </body>
